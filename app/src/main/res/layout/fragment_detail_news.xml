@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    >
+
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.notifications.NewsDetailFragment">
+
+    <ImageView
+        android:id="@+id/newsImageView"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/ic_dashboard_black_24dp"
+        app:layout_constraintTop_toTopOf="parent"
+
+        />
+
+    <TextView
+        android:id="@+id/newsNameTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/newsImageView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:padding="5dp"
+        tools:text="Yeni Haberler"
+        android:textSize="25sp"
+        android:textStyle="bold"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/author"
+        tools:text="yazar"
+        android:padding="5dp"
+        app:layout_constraintTop_toBottomOf="@+id/newsNameTitle"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="15dp"
+        android:textStyle="bold"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/newsTime"
+        tools:text="Zaman"
+        android:padding="5dp"
+        app:layout_constraintTop_toTopOf="@+id/author"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="@+id/author"
+        android:textStyle="bold"
+        android:layout_marginEnd="50dp"
+        />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:id="@+id/scrollNews"
+        app:layout_constraintTop_toBottomOf="@+id/newsTime"
+        app:layout_constraintBottom_toBottomOf="parent"
+
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/linearnews"
+            android:orientation="vertical"
+            >
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@id/newsDescription"
+                tools:text="Aciklama"
+                android:padding="5dp"
+                app:layout_constraintTop_toBottomOf="@+id/newsTime"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginHorizontal="10dp"
+                android:layout_marginTop="15dp"
+                />
+            <Button
+                android:id="@+id/sourceBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="Haber Kaynağı"
+                app:layout_constraintTop_toBottomOf="@+id/newsDescription"
+                android:padding="5dp"
+                android:layout_gravity="center"
+                android:textColor="@color/white"
+                android:layout_marginTop="15dp"/>
+            <Button
+                android:id="@+id/saveBtn"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:background="@drawable/ic_baseline_save_24"
+                android:layout_gravity="right"
+                />
+
+
+        </LinearLayout>
+    </ScrollView>
+
+
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
